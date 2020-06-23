@@ -13,3 +13,7 @@ Create an engine that will be able to evaluate data submitted to it on an ongoin
 ## How to use
 Send a POST JSON payload matching the specs in the Fact class to `/evaluate/{ruleset}` where ruleset is an existing ruleset in the file.
 Return result will be whatever was specified in matching method for ruleset
+
+## Uses:
+- FastAPI https://fastapi.tiangolo.com
+- Durable Rules Engine https://github.com/jruizgit/rules
