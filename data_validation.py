@@ -57,3 +57,8 @@ with ruleset('data_missing'):
         result = {"result": "ERROR: {0} - row_count is a required field. Received {1}".format(c.m.name, c.m.row_count)}
         print(result)
         return result
+
+with ruleset('data_bad_dates'):
+    @when_all((m.effective_date > m.expiration_date) or (m.effective_date < datetime.now()))
+    def error_invalid_date(c):
+        result = {"result": "ERROR: {0} - effective_date > expiration date or effective_date is before {1}".format(c.m.name, datetime.now())}
